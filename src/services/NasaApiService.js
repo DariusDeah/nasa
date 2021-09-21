@@ -5,7 +5,7 @@ const apiKey = 'api_key=DLqq9FfE0gGsk9u1fjzjt7hhPp2x0TNFhN8t8tdR'
 
 // eslint-disable-next-line no-undef
 const nasaApi = axios.create({
-  baseURL: 'https://api.nasa/gov/planetary/'
+  baseURL: 'https://api.nasa.gov/planetary/'
 })
 
 class NasaApiService {

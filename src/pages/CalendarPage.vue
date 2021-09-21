@@ -1,7 +1,12 @@
 <template>
-  <div class="calendar">
-    <input type="date" v-model="state.date">
-  </div>
+  <form @submit.prevent="showdata()">
+    <div class="calendar">
+      <input type="date" v-model="state.date">
+      <button type="submit" class="btn btn-primary">
+        submit
+      </button>
+    </div>
+  </form>
 </template>
 
 <script>
@@ -15,13 +20,14 @@ export default {
     const state = reactive({
       date: ''
     })
+
     return {
       state,
       async showdata() {
         try {
           await nasaApiService.getNasaData(state.date)
         } catch (error) {
-          logger.error(error)
+          logger.log(error)
         }
       }
     }
