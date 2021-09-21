@@ -7,12 +7,21 @@
       </button>
     </div>
   </form>
+  <div>
+    <h4>{{ Title }}</h4>
+    <div>
+      <img :src="Url" alt="">
+      <p>{{ Story }}</p>
+    </div>
+  </div>
 </template>
 
 <script>
 import { logger } from '../utils/Logger'
 import { nasaApiService } from '../services/NasaApiService'
 import { reactive } from '@vue/reactivity'
+import { computed } from '@vue/runtime-core'
+import { AppState } from '../AppState'
 export default {
   components: {},
   name: 'CalendarPage',
@@ -29,10 +38,16 @@ export default {
         } catch (error) {
           logger.log(error)
         }
-      }
+      },
+      Url: computed(() => AppState.apod.url),
+      Date: computed(() => AppState.apod.date),
+      Story: computed(() => AppState.apod.explanation),
+      Title: computed(() => AppState.apod.title)
+
     }
   }
 }
 </script>
-<style scoped>
+<style scoped lang="scss">
+
 </style>

@@ -1,5 +1,6 @@
 import { logger } from '../utils/Logger'
 import axios from 'axios'
+import { AppState } from '../AppState'
 
 const apiKey = 'api_key=DLqq9FfE0gGsk9u1fjzjt7hhPp2x0TNFhN8t8tdR'
 
@@ -12,6 +13,7 @@ class NasaApiService {
   async getNasaData(query) {
     const res = await nasaApi.get(`apod?${apiKey}&date=${query}`)
     logger.log(res)
+    AppState.apod = res.data
   }
 }
 export const nasaApiService = new NasaApiService()
