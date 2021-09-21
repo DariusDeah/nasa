@@ -1,7 +1,7 @@
 <template>
   <div class="about">
-    <h1></h1>
-    <input type="datetime-local" id="Test_DatetimeLocal">
+    <h3>Pick a date</h3>
+    <input type="datetime-local" id="Test_DatetimeLocal" class="calendar">
   </div>
 </template>
 
@@ -10,3 +10,5 @@ export default {
   name: 'CalendarPage'
 }
 </script>
+<style scoped>
+</style>
