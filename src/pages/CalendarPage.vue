@@ -1,19 +1,31 @@
 <template>
-  <form @submit.prevent="showdata()">
-    <div class="calendar">
-      <input type="date" v-model="state.date">
-      <button type="submit" class="btn btn-primary">
-        submit
-      </button>
+  <section class="container-fluid">
+    <div class="row ">
+      <form @submit.prevent="showdata()">
+        <div class="calendar">
+          <input type="date" v-model="state.date">
+          <button type="submit" class="btn btn-primary">
+            submit
+          </button>
+        </div>
+      </form>
     </div>
-  </form>
-  <div>
-    <h4>{{ Title }}</h4>
-    <div>
-      <img :src="Url" alt="">
-      <p>{{ Story }}</p>
+  </section>
+  <section class="container-fluid bg-black">
+    <div class="row  text-center  ">
+      <header class="col-lg-6 bg-dark text-light p-0">
+        <div class="row">
+          <h4>{{ Title }}</h4>
+        </div>
+        <div class="row">
+          <p>{{ Story }}</p>
+        </div>
+      </header>
+      <div class="col-lg-6 ">
+        <img class="img img-fluid" :src="Url" alt="">
+      </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -49,5 +61,10 @@ export default {
 }
 </script>
 <style scoped lang="scss">
+.img{
+  @media only screen and (min-width:900px)    {
+    height: 85vh;
 
+  }
+}
 </style>

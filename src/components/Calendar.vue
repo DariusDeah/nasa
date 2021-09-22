@@ -1,5 +1,5 @@
 <template>
-  <div class="ms-4 p-4">
+  <div class="">
     <h3>Pick a date</h3>
   </div>
 </template>
